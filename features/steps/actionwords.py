@@ -14,7 +14,8 @@ class Actionwords:
         self.sut.stop()
 
     def message_message_should_be_displayed(self, message):
-        assert (self.sut.message == message) is True
+
+        assert (self.sut.message.replace("\r", "") == message.replace("\r", "")) is True
 
     def coffee_should_be_served(self):
         assert self.sut.coffee_served is True
